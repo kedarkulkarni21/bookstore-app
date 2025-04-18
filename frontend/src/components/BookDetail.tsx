@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
     Container,
@@ -13,9 +13,9 @@ import { Book, deleteBook, getBook } from '../services/api';
 const BookDetail = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const [book, setBook] = React.useState<Book | null>(null);
+    const [book, setBook] = useState<Book | null>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const fetchBook = async () => {
             if (!id) return;
             try {

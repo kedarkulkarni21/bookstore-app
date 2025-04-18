@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "Id": 1,
+      "Title": "The Lord of the Rings",
+      "Author": "J.R.R. Tolkien",
+      "ISBN": "978-0544003415",
+      "Description": "An epic high-fantasy novel that follows the quest to destroy the One Ring.",
+      "Price": 29.99,
+      "StockQuantity": 50,
+      "PublishedDate": "1954-07-29T00:00:00",
+      "CoverImageUrl": "https://m.media-amazon.com/images/I/71jLBXtWJWL._AC_UF1000,1000_QL80_.jpg",
+      "Category": "Fantasy"
+    },
+    {
+      "Id": 2,
+      "Title": "Harry Potter and the Philosopher\u0027s Stone",
+      "Author": "J.K. Rowling",
+      "ISBN": "978-1408855652",
+      "Description": "The first book in the Harry Potter series, following the young wizard\u0027s first year at Hogwarts.",
+      "Price": 19.99,
+      "StockQuantity": 100,
+      "PublishedDate": "1997-06-26T00:00:00",
+      "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+      "Category": "Fantasy"
+    }
+  ]
+}
