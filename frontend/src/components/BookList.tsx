@@ -10,12 +10,13 @@ import {
     Box
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import { Book, getBooks } from '../services/api';
+import { Book, getBooks, addFavorite } from '../services/api';
 
 interface BookListProps {}
 
 const BookList: React.FC<BookListProps> = () => {
     const [books, setBooks] = React.useState<Book[]>([]);
+    const [favoriteMessageId, setFavoriteMessageId] = React.useState<number | null>(null);
 
     React.useEffect(() => {
         const fetchBooks = async () => {
@@ -32,10 +33,21 @@ const BookList: React.FC<BookListProps> = () => {
 
     return (
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
-                <Typography variant="h4" component="h1">
-                    Books
-                </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 3 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography variant="h4" component="h1">
+                        Books
+                    </Typography>
+                    <Button
+                        component={Link}
+                        to="/favorites"
+                        variant="outlined"
+                        color="secondary"
+                        sx={{ ml: 2 }}
+                    >
+                        Favorites
+                    </Button>
+                </Box>
                 <Button
                     component={Link}
                     to="/books/new"
@@ -73,10 +85,31 @@ const BookList: React.FC<BookListProps> = () => {
                                     to={`/books/${book.id}`}
                                     variant="outlined"
                                     color="primary"
-                                    sx={{ mt: 2 }}
+                                    sx={{ mt: 2, mr: 1 }}
                                 >
                                     View Details
                                 </Button>
+                                <Button
+                                    variant="contained"
+                                    color="secondary"
+                                    sx={{ mt: 2 }}
+                                    onClick={async () => {
+                                        try {
+                                            await addFavorite(book.id);
+                                            setFavoriteMessageId(book.id);
+                                            setTimeout(() => setFavoriteMessageId(current => current === book.id ? null : current), 5000);
+                                        } catch (error) {
+                                            alert('Failed to add to favorites.');
+                                        }
+                                    }}
+                                >
+                                    Add to Favorites
+                                </Button>
+                                {favoriteMessageId === book.id && (
+                                    <Typography variant="body2" color="success.main" sx={{ mt: 1 }}>
+                                        Added to favorites!
+                                    </Typography>
+                                )}
                             </CardContent>
                         </Card>
                     </Grid>

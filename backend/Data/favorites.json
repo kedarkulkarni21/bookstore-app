@@ -1,0 +1,16 @@
+{
+  "favorites": [
+    {
+      "Id": 2,
+      "Title": "Harry Potter and the Philosopher\u0027s Stone",
+      "Author": "J.K. Rowling",
+      "ISBN": "978-1408855652",
+      "Description": "The first book in the Harry Potter series, following the young wizard\u0027s first year at Hogwarts.",
+      "Price": 19.99,
+      "StockQuantity": 100,
+      "PublishedDate": "1997-06-26T00:00:00",
+      "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
+      "Category": "Fantasy"
+    }
+  ]
+}

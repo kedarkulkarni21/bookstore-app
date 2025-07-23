@@ -41,4 +41,17 @@ export const updateBook = async (id: number, book: Book): Promise<void> => {
 
 export const deleteBook = async (id: number): Promise<void> => {
     await api.delete(`/books/${id}`);
+};
+
+export const getFavorites = async (): Promise<Book[]> => {
+    const response = await api.get<Book[]>("/favorites");
+    return response.data;
+};
+
+export const addFavorite = async (id: number): Promise<void> => {
+    await api.post(`/favorites/${id}`);
+};
+
+export const removeFavorite = async (id: number): Promise<void> => {
+    await api.delete(`/favorites/${id}`);
 }; 
