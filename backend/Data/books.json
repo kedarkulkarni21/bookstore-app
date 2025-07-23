@@ -23,6 +23,18 @@
       "PublishedDate": "1997-06-26T00:00:00",
       "CoverImageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg",
       "Category": "Fantasy"
+    },
+    {
+      "Id": 3,
+      "Title": "Project Hail Mary",
+      "Author": "Andy Weir",
+      "ISBN": "978-0593135204",
+      "Description": "A lone astronaut must save humanity from extinction in this gripping interstellar adventure from the author of The Martian. Ryland Grace awakens with no memory on a spaceship far from Earth, and must use his scientific ingenuity to accomplish an impossible mission.",
+      "Price": 28.99,
+      "StockQuantity": 75,
+      "PublishedDate": "2021-05-04T00:00:00",
+      "CoverImageUrl": "https://m.media-amazon.com/images/I/91Bd7P8UwxL._AC_UF1000,1000_QL80_.jpg",
+      "Category": "Science Fiction"
     }
   ]
 }

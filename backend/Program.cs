@@ -40,6 +40,7 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 
 // Register repositories
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddSingleton<IFavoritesRepository, FavoritesRepository>();
 
 var app = builder.Build();
 

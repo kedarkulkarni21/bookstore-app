@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Container, CssBaseline } from '@mui/material';
+import { AppBar, Toolbar, Typography, Container, CssBaseline, Button } from '@mui/material';
 import BookList from './components/BookList';
 import BookDetail from './components/BookDetail';
 import BookEdit from './components/BookEdit';
 import BookCreate from './components/BookCreate';
+import FavoritesList from './components/FavoritesList';
 
 const App: React.FC = () => {
   return (
@@ -12,8 +13,8 @@ const App: React.FC = () => {
       <CssBaseline />
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component={Link} to="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
-            Bookstore
+          <Typography variant="h6" component={Link} to="/" sx={{ textDecoration: 'none', color: 'inherit', flexGrow: 1 }}>
+            Bookstore Home
           </Typography>
         </Toolbar>
       </AppBar>
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/books/new" element={<BookCreate />} />
           <Route path="/books/:id" element={<BookDetail />} />
           <Route path="/books/edit/:id" element={<BookEdit />} />
+          <Route path="/favorites" element={<FavoritesList />} />
         </Routes>
       </Container>
     </Router>
